@@ -7,7 +7,7 @@ const app = express();
 const cors = require('cors');
 
 app.use(cors({
-  origin: '*'
+  origin: 'https://render-test-1-frontend.onrender.com'
 }));
 
 
