@@ -7,7 +7,7 @@ const app = express();
 const cors = require('cors');
 
 app.use(cors({
-  origin: 'http://localhost:5173', 
+  origin: 'https://frontend-client-705j.onrender.com', 
   credentials: true
 }));
 
@@ -61,4 +61,4 @@ app.listen(port, () => {
 
 
 // https://backend-server-qexr.onrender.com
-// https://frontend-client-6gla.onrender.com
+// https://frontend-client-705j.onrender.com
