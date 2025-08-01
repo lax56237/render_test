@@ -38,7 +38,7 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema, 'test');
 
 app.get('/',(req,res)=>{
-  res.send(" backend deployed successfully ! ")
+  res.send(" backend deployed successfully complete ! ")
 })
 app.post('/api/save', async (req, res) => {
   const { username, message } = req.body;
