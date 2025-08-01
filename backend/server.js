@@ -58,3 +58,7 @@ app.get('/api/message/:username', async (req, res) => {
 app.listen(port, () => {
   console.log(`🚀 Server running on http://localhost:${port}`);
 });
+
+
+// https://backend-server-qexr.onrender.com
+// https://frontend-client-6gla.onrender.com

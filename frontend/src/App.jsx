@@ -12,7 +12,7 @@ function App() {
       return;
     }
 
-    const res = await fetch('http://localhost:3001/api/save', {
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/save`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, message }),

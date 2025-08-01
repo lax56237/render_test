@@ -7,7 +7,7 @@ function Home() {
 
   useEffect(() => {
     const fetchMessage = async () => {
-      const res = await fetch(`http://localhost:3001/api/message/${username}`);
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/message/${username}`);
       const data = await res.json();
       if (res.ok) {
         setMessage(data.message);
