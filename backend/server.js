@@ -7,7 +7,7 @@ const app = express();
 const cors = require('cors');
 
 app.use(cors({
-  origin: 'https://frontend-client-705j.onrender.com', 
+  origin: `https://frontend-client-705j.onrender.com`, 
   credentials: true
 }));
 
@@ -38,7 +38,6 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema, 'test');
 
-
 app.post('/api/save', async (req, res) => {
   const { username, message } = req.body;
   const newUser = new User({ username, message });
@@ -60,5 +59,4 @@ app.listen(port, () => {
 });
 
 
-// https://backend-server-qexr.onrender.com
 // https://frontend-client-705j.onrender.com
