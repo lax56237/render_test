@@ -12,7 +12,7 @@ function App() {
       return;
     }
 
-    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/save`, {
+    const res = await fetch(`https://render-test-hm0h.onrender.com/api/save`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, message }),

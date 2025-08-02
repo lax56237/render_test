@@ -10,15 +10,16 @@ app.use(cors({
   origin: 'https://render-test-1-frontend.onrender.com'
 }));
 
-
 app.use(express.json());
 
-const { MONGO_URI, PORT } = process.env;
+const MONGO_URI = "mongodb+srv://lax:2005Laxmongo@rendercluster.rss1lxd.mongodb.net/crud"
+const PORT = 3001;
+
 if (!MONGO_URI) {
   console.error("❌ MONGO_URI is missing in .env");
   process.exit(1);
 }
-const port = PORT || 3001;
+const port = PORT || 3000;
 
 mongoose
   .connect(MONGO_URI, {
@@ -38,12 +39,13 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema, 'test');
 
 app.get('/',(req,res)=>{
-  res.send(" backend deployed successfully complete ! ")
+  res.send(" backend deployed successfully complete in this new one ! ")
 })
 app.post('/api/save', async (req, res) => {
   const { username, message } = req.body;
   const newUser = new User({ username, message });
   await newUser.save();
+  console.log(username, " successfully saved!")
   res.status(201).json({ msg: "Saved" });
 });
 
@@ -59,6 +61,3 @@ app.get('/api/message/:username', async (req, res) => {
 app.listen(port, () => {
   console.log(`🚀 Server running on http://localhost:${port}`);
 });
-
-// https://render-test-o0hu.onrender.com
-// https://frontend-client-705j.onrender.com
